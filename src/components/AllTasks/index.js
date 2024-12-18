@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { tasks } from "../../utils/data";
 import TaskCard from "../TaskCard";
 import './index.css';
 import { taskContext } from "../../context/taskContext";
