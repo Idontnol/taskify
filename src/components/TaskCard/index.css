@@ -1,0 +1,111 @@
+/* Task Card Styling */
+.task-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    width: 100%;
+    height:170px;
+    display:flex;
+    flex-direction: column;
+  justify-content: space-evenly;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  
+  .task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card Header */
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .task-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+  }
+  
+  .status-icon {
+    font-size: 20px;
+  }
+  
+  .status-icon.completed {
+    color: #4caf50;
+  }
+  
+  .status-icon.pending {
+    color: #ff9800;
+  }
+  
+  /* Card Description */
+  .task-description {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.5;
+  }
+  
+  /* Card Footer */
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .due-date {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .card-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Buttons */
+  .edit-btn, .delete-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .edit-btn {
+    background-color: #2196f3;
+    color: #fff;
+  }
+  
+  .edit-btn:hover {
+    background-color: #1976d2;
+    transform: scale(1.05);
+  }
+  
+  .delete-btn {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+  }
+  
+  .action-icon {
+    font-size: 18px;
+  }
+  
