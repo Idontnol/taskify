@@ -1,18 +1,57 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import TaskCard from "../TaskCard";
 import './index.css';
 import { taskContext } from "../../context/taskContext";
+import TaskModal from "../TaskModal";
 // import TaskCard from "../TaskCard";
 
 const AllTasks = () => {
-  const handleEdit = (taskId) => {
-    alert(`Edit Task ID: ${taskId}`);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalType, setModalType] = useState(""); // "edit", "create", or "show"
+  const [selectedTaskId, setSelectedTaskId] = useState(null);
+//   const handleEdit = (taskId) => {
+//     alert(`Edit Task ID: ${taskId}`);
+//   };
+
+//   const handleDelete = (taskId) => {
+//     alert(`Delete Task ID: ${taskId}`);
+//   };
+  const openModal = (type, taskId = -1) => {
+    setModalType(type);
+    setSelectedTaskId(taskId);
+    setIsModalOpen(true);
   };
 
-  const handleDelete = (taskId) => {
-    alert(`Delete Task ID: ${taskId}`);
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
-  const {currentTasks}=useContext(taskContext);
+
+  const saveTask = (task) => {
+    if (task.id === -1) {
+      // Create a new task
+      const newTask = {
+        ...task,
+        id: currentTasks.length > 0 ? currentTasks[currentTasks.length - 1].id + 1 : 1,
+      };
+      setCurrentTasks([...currentTasks, newTask]);
+      console.log("New Task Created:", newTask);
+    } else {
+      // Update an existing task
+      const updatedTasks = currentTasks.map((t) =>
+        t.id === task.id ? { ...t, ...task } : t
+      );
+      setCurrentTasks(updatedTasks);
+      console.log("Task Updated:", task);
+    }
+    closeModal();
+  };
+  
+  const {currentTasks,setCurrentTasks}=useContext(taskContext);
+
+  const deleteTask=(id)=>{
+    const updatedTasks=currentTasks.filter(task=>task.id !== id);
+    setCurrentTasks(updatedTasks);
+  }
 
   return (
     <div className="all-tasks">
@@ -25,11 +64,22 @@ const AllTasks = () => {
             description={task.description}
             detailedInfo={task.detailedInfo} 
             task={task}
-            onEdit={() => handleEdit(task.id)}
-            onDelete={() => handleDelete(task.id)}
+            dueDate={task.dueDate}
+            onEdit={() => openModal("edit", task.id)}
+            onDelete={() => deleteTask(task.id)}
+            onShow={() => openModal("show", task.id)}
+
           />
         ))}
       </div>
+      {isModalOpen && (
+        <TaskModal
+          type={modalType}
+          id={selectedTaskId}
+          onClose={closeModal}
+          onSave={saveTask}
+        />
+      )}
     </div>
   );
 };
