@@ -58,18 +58,29 @@ const AllTasks = () => {
       <h1 className="title">All Tasks</h1>
       <div className="task-grid">
         {currentTasks.map((task) => (
-          <TaskCard
-            key={task.id}
-            title={task.title}
-            description={task.description}
-            detailedInfo={task.detailedInfo} 
-            task={task}
-            dueDate={task.dueDate}
-            onEdit={() => openModal("edit", task.id)}
-            onDelete={() => deleteTask(task.id)}
-            onShow={() => openModal("show", task.id)}
+        //   <TaskCard
+        //     key={task.id}
+        //     title={task.title}
+        //     description={task.description}
+        //     detailedInfo={task.detailedInfo} 
+        //     task={task}
+        //     dueDate={task.dueDate}
+        //     onEdit={() => openModal("edit", task.id)}
+        //     onDelete={() => deleteTask(task.id)}
+        //     onShow={() => openModal("show", task.id)}
 
-          />
+        //   />
+          <TaskCard
+          key={task.id || 0}
+          title={task.title || "Untitled Task"}
+          description={task.description || "No description available."}
+          detailedInfo={task.detailedInfo || "No details."}
+          task={task || {}}
+          dueDate={task.dueDate || "No due date"}
+          onEdit={() => openModal("edit", task.id || -1)}
+          onDelete={() => deleteTask(task.id || -1)}
+          onShow={() => openModal("show", task.id || -1)}
+        />
         ))}
       </div>
       {isModalOpen && (
