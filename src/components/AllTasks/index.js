@@ -59,6 +59,7 @@ const AllTasks = () => {
   }
 
   const deleteTask=(id)=>{
+    if(id===-1) return;
     const updatedTasks=currentTasks.filter(task=>task.id !== id);
     setCurrentTasks(updatedTasks);
   }
@@ -87,9 +88,9 @@ const AllTasks = () => {
         return(          <TaskCard
           key={task.id || 0}
           title={task.title || "Untitled Task"}
+          status = {task.status|| "pending"} 
           description={task.description || "No description available."}
           detailedInfo={task.detailedInfo || "No details."}
-          task={task || {}}
           dueDate={task.dueDate || "No due date"}
           onEdit={() => openModal("edit", task.id || -1)}
           onDelete={() => deleteTask(task.id || -1)}

@@ -6,9 +6,10 @@ const TaskCard = ({  title = "Untitled Task",
     description = "No description available.", 
     dueDate = "No due date", 
     status = "pending", 
-    onEdit, 
+    onEdit, detailedInfo="",
     onDelete, 
     onShow  }) => {
+        console.log(detailedInfo,"details of task card");
   return (
     <div className="task-card" onClick={onShow}> 
       <div className="card-header">
