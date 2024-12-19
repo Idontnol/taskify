@@ -8,6 +8,7 @@ import AllTasks from './components/AllTasks';
 import CompletedTasks from './components/CompletedTasks';
 import PendingTasks from './components/PendingTasks';
 import { tasks } from './utils/data';
+import Hero from './components/Hero';
 
 function App() {
   const [showSignUpModal,setShowSignUpModal]=useState(false);
@@ -20,7 +21,7 @@ function App() {
             <Navbar setShowSignUpModal={setShowSignUpModal}  />
             {showSignUpModal && <SignUpLoginModal setShowSignUpModal={setShowSignUpModal} />}
             <Routes>
-              <Route exact path="/" element={  <AllTasks/>} />
+              <Route exact path="/" element={  <Hero/>} />
               <Route exact path="/all-tasks" element={<AllTasks/>} />
               <Route exact path="/completed-tasks" element={<CompletedTasks/>} />
               <Route exact path="pending-tasks" element={<PendingTasks/>} />
