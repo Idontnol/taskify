@@ -17,6 +17,12 @@ const AllTasks = () => {
 //     alert(`Delete Task ID: ${taskId}`);
 //   };
   const openModal = (type, taskId = -1) => {
+    console.log("Opening modal with type:", type, "and taskId:", taskId);
+
+    if (taskId !== -1 && !currentTasks.find((task) => task.id === taskId)) {
+      console.error("Invalid task ID:", taskId);
+      return;
+    }
     setModalType(type);
     setSelectedTaskId(taskId);
     setIsModalOpen(true);
@@ -47,6 +53,10 @@ const AllTasks = () => {
   };
   
   const {currentTasks,setCurrentTasks}=useContext(taskContext);
+  if (!Array.isArray(currentTasks)) {
+    console.error("currentTasks is not an array:", currentTasks);
+    return <div>No tasks available</div>;
+  }
 
   const deleteTask=(id)=>{
     const updatedTasks=currentTasks.filter(task=>task.id !== id);
@@ -57,7 +67,11 @@ const AllTasks = () => {
     <div className="all-tasks">
       <h1 className="title">All Tasks</h1>
       <div className="task-grid">
-        {currentTasks.map((task) => (
+        {currentTasks.map((task) => {
+             if (!task || typeof task !== "object") {
+                console.warn("Invalid task data:", task);
+                return null; // Skip invalid tasks
+              }
         //   <TaskCard
         //     key={task.id}
         //     title={task.title}
@@ -70,7 +84,7 @@ const AllTasks = () => {
         //     onShow={() => openModal("show", task.id)}
 
         //   />
-          <TaskCard
+        return(          <TaskCard
           key={task.id || 0}
           title={task.title || "Untitled Task"}
           description={task.description || "No description available."}
@@ -80,8 +94,8 @@ const AllTasks = () => {
           onEdit={() => openModal("edit", task.id || -1)}
           onDelete={() => deleteTask(task.id || -1)}
           onShow={() => openModal("show", task.id || -1)}
-        />
-        ))}
+        />)
+    })}
       </div>
       {isModalOpen && (
         <TaskModal

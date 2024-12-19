@@ -2,7 +2,13 @@ import React from "react";
 import { MdEdit, MdDelete, MdCheckCircle, MdPending } from "react-icons/md";
 import './index.css'; // Ensure this CSS file is imported
 
-const TaskCard = ({ title, description, dueDate, status, onEdit, onDelete,onShow }) => {
+const TaskCard = ({  title = "Untitled Task", 
+    description = "No description available.", 
+    dueDate = "No due date", 
+    status = "pending", 
+    onEdit, 
+    onDelete, 
+    onShow  }) => {
   return (
     <div className="task-card" onClick={onShow}> 
       <div className="card-header">
