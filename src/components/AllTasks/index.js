@@ -9,13 +9,7 @@ const AllTasks = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalType, setModalType] = useState(""); // "edit", "create", or "show"
   const [selectedTaskId, setSelectedTaskId] = useState(null);
-//   const handleEdit = (taskId) => {
-//     alert(`Edit Task ID: ${taskId}`);
-//   };
 
-//   const handleDelete = (taskId) => {
-//     alert(`Delete Task ID: ${taskId}`);
-//   };
   const openModal = (type, taskId = -1) => {
     console.log("Opening modal with type:", type, "and taskId:", taskId);
 
@@ -73,18 +67,6 @@ const AllTasks = () => {
                 console.warn("Invalid task data:", task);
                 return null; // Skip invalid tasks
               }
-        //   <TaskCard
-        //     key={task.id}
-        //     title={task.title}
-        //     description={task.description}
-        //     detailedInfo={task.detailedInfo} 
-        //     task={task}
-        //     dueDate={task.dueDate}
-        //     onEdit={() => openModal("edit", task.id)}
-        //     onDelete={() => deleteTask(task.id)}
-        //     onShow={() => openModal("show", task.id)}
-
-        //   />
         return(          <TaskCard
           key={task.id || 0}
           title={task.title || "Untitled Task"}

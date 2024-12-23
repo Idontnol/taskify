@@ -1,0 +1,121 @@
+.modal2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content2 {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  form input,
+  form textarea,
+  form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* form button:hover {
+    background-color: #45a049;
+  } */
+  .show-task{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .record-format2{
+    display:flex;
+flex-direction:column;   
+align-items:flex-start; /* display: grid;
+    grid-template-columns: 120px 1fr; Fixed width for label, remaining space for p */
+    /* Aligns content vertically */
+    justify-content: flex-start;
+    padding: 8px 0; 
+    width: 95%;
+  }
+  .record-format2 label{
+    display:flex;
+    /* color:#3498db; */
+    /* font-weight: bold; */
+
+  }
+  .record-format2 p{
+    display:flex;
+    text-align:start;
+    
+  }
+  .cancelBtn, .cancelBtn:hover{
+    color:#1B72C2;
+    background-color:#EBEEFC;
+  }
+  .addBtn,.addBtn:hover{
+    color:#fff;
+    background-color:#3659E2;
+  }
+  .controlBtns{
+    display:flex;
+    gap:20px;
+    justify-content:flex-end;
+  }
+  .controlBtns button{
+    border-radius:9px;
+    /* padding:12px 12px; */
+  }
+  .taskc-header{
+    color:#263FA0;
+    font-size:20px;
+    text-align:left;
+  }
+
+  .addtask-dates{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+  }
+  .addtask-dates div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width:44%;
+  }

@@ -1,0 +1,54 @@
+.column {
+    flex: 1;
+    /* background: #f9f9f9; */
+    /* border: 1px solid #ddd;
+    border-radius: 5px; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+  }
+  
+  .column h3 {
+    text-align: center;
+    color: #666;
+  }
+  
+  .add-task {
+    padding: 10px;
+    background: #e6e6e6;
+    color: #333;
+    border: none;
+    cursor: pointer;
+  }
+  .add-new-taskbtn{
+    margin-top: 10px;
+   height:39px;
+   width:96%;
+    display:flex;
+    align-items: center;
+    gap:5px;
+    box-sizing: border-box;
+    justify-content: center;
+    /* background:transparent; */
+    border-radius: 12px;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+  }
+  .task-status-header{
+    border-radius:20px;
+    border:none;
+    /* display: inline !important; */
+    padding: 10px 12px;
+    width:fit-content;
+  }
+ 
+  .status-circle {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%; /* Makes it a circle */
+    margin-right: 8px; /* Space between the circle and text */
+    vertical-align: middle; /* Aligns the circle with text */
+  }

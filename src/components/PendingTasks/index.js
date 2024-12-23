@@ -57,6 +57,7 @@ const PendingTasks=()=>{
           description={task.description}
           detailedInfo={task.detailedInfo} 
           task={task}
+          status={task.status|| "pending"} 
           dueDate={task.dueDate}
           onEdit={() => openModal("edit", task.id)}
           onDelete={() => deleteTask(task.id)}

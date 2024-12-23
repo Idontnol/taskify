@@ -1,0 +1,115 @@
+.taskboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background: #fff;
+    border-right: 1px solid #D8E0FD;
+    /* padding: 20px; */
+  }
+  
+  .sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  .add-project {
+    margin-top: 10px;
+    padding: 10px;
+    display:flex;
+    align-items: center;
+    gap:5px;
+    box-sizing: border-box;
+    text-align: left;
+    background:transparent;
+    padding-left: 10%;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-top:1px solid #D8E0FD;
+  }
+  
+  .board {
+    flex: 1;
+    /* padding: 20px; */
+  }
+  
+  .columns {
+    display: flex;
+    gap: 20px;
+  }
+  .sidebar-heading{
+    display: flex;
+    /* width: 90%; */
+    justify-content: center;
+    gap:10px;
+    border-bottom: 1px solid #D8E0FD;
+  }
+  .sidebar-heading img{
+    object-fit: contain;
+  }
+  .project-list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left:10px;
+    box-sizing: content-box;
+  }
+  .project-list li{
+    width:88%;
+    height:30px;
+    text-align:left;
+    padding-left:12%;
+    cursor:pointer;
+    padding-top:8px;
+  }
+  .custom-rule {
+    border: none; /* Removes the default border */
+    height: 2px; /* Adjust thickness */
+    background-color: #D8E0FD; /* Set your desired color */
+    margin: 10px 0; /* Space around the rule */
+  }
+  .board-project-name{
+    text-align:left;
+    margin-left: 20px;
+  }
+  /* Styling for the vertical divider */
+.vertical-divider {
+    position: relative;
+    width: 2px; /* Thickness of the vertical line */
+    background-color: #D8E0FD; /* Color of the vertical line */
+    margin: 0 10px; /* Space around the vertical line */
+    height: 100vh; /* Make the height adjustable */
+    min-height: 100%; /* Ensure it spans the full height of the columns container */
+    top:63px; 
+  }
+  
+  /* Decorative circle at the top of the vertical line */
+  .vertical-divider::before {
+    content: '';
+    position: absolute;
+    top: -7px; /* Adjust position above the line */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px; /* Diameter of the circle */
+    height:7px; /* Diameter of the circle */
+    background-color: #D8E0FD; /* Same color as the vertical line */
+    border-radius: 50%; /* Makes it a circle */
+  }
+  .active-project{
+    background-color:#EBEEFC !important; 
+
+  }

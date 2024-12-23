@@ -57,6 +57,7 @@ const CompletedTasks=()=>{
             title={task.title || "Untitled Task"}
             description={task.description || "No description available."}
             detailedInfo={task.detailedInfo || "No details."}
+            status={task.status|| "pending"} 
             task={task || {}}
             dueDate={task.dueDate || "No due date"}
             onEdit={() => openModal("edit", task.id || -1)}

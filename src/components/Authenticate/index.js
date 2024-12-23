@@ -41,7 +41,7 @@ const SignUpLoginModal = (props) => {
                     <div className="modal-container">
                         <div className="modal-header">
                             <h2>{isLogin ? "Login" : "Sign Up"}</h2>
-                            <button className="close-button" onClick={() => setShowSignUpModal(false)}>×</button>
+                            <button className="close-button23" onClick={() => setShowSignUpModal(false)}>×</button>
                         </div>
 
                         <form onSubmit={handleSubmit}>
