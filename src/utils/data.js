@@ -75,7 +75,7 @@ export const tasks = [
   
   export const statusConverter=(stat)=>{
     console.log(stat,"sssssssssssssssssssssssssss");
-    if(stat==="To DO") return "toDo";
+    if(stat==="To Do") return "toDo";
     else if(stat==="In Progress") return "inProgress";
     else if(stat==="In Review") return "inReview";
     else return "completed";

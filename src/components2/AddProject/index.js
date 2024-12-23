@@ -1,10 +1,11 @@
 import React, { useState,useContext } from "react";
 import './index.css';
+import { v4 as uuidv4 } from "uuid";
 import { taskContext } from "../../context/taskContext";
 
 const AddProject = ({  onClose}) => {
   const [projectDetails, setProjectDetails] = useState({
-    id: "",
+    id: uuidv4(),
     name:"",
     details:{
         toDo:[],
