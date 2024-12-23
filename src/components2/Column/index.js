@@ -46,7 +46,6 @@ const Column = ({ status,setTaskOpen,setModalType,setPreferedStat, closeModal })
 
   useEffect(()=>{
      setTasks(activeProject?.details[statusTemp]);
-     console.log(allProjects,closeModal,"nowwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww");
      // eslint-disable-next-line react-hooks/exhaustive-deps
   },[activeProject,setAllProjects,allProjects,closeModal])
 

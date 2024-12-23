@@ -9,7 +9,7 @@ const AddTask = ({ type, task, onClose, onSave, stat}) => {
     endDate:"",
     status: stat || "toDo",
   });
-  const {activeProject,allProjects,setAllProjects}=useContext(taskContext);
+  const {activeProject,allProjects,setAllProjects,setActiveProject}=useContext(taskContext);
 
   console.log(stat,"sattttt")
 
@@ -42,7 +42,12 @@ const AddTask = ({ type, task, onClose, onSave, stat}) => {
               ],
             };
             console.log("successsssssssssssssssssssssssssssss",updatedDetails,"tttttttttttttttttt");
-    
+            const temp={
+              ...project,
+              details: updatedDetails,
+            };
+            console.log("successsssssssssssssssssssssssdfsdfsdfdsfsdf",temp);
+            setActiveProject(temp);
             return {
               ...project,
               details: updatedDetails,
@@ -52,7 +57,6 @@ const AddTask = ({ type, task, onClose, onSave, stat}) => {
         })
       );
     console.log(allProjects,"testtttttttttttttt",updatedTask);
-  
     // Close the modal or reset form as necessary
     onClose();
   };
