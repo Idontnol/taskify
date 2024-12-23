@@ -22,11 +22,11 @@ const TaskBoard = () => {
   const statuses = ["To Do", "In Progress", "In Review", "Completed"];
   const [taskOpen,setTaskOpen]=useState(false);
   const [projectOpen,setProjectOpen]=useState(false);
-  const openTaskModal = (type, task = null) => {
-    setModalType(type);
-    setSelectedTask(task);
-    setTaskOpen(true);
-  };
+//   const openTaskModal = (type, task = null) => {
+//     setModalType(type);
+//     setSelectedTask(task);
+//     setTaskOpen(true);
+//   };
 
   const closeModal = () => {
     setTaskOpen(false);
