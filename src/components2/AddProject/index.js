@@ -37,13 +37,14 @@ const AddProject = ({  onClose}) => {
           &times;
         </button>
         {(
-          <form>
+          <form onSubmit={handleSubmit}>
             <p className="taskc-header">{"Create Project"}</p>
             <hr className="custom-rule"/>
             <div className="record-format2">
               <label>Name of the Project</label>
               <input
                 type="text"
+                required
                 name="name"
                 value={projectDetails.name}
                 onChange={handleChange}
@@ -55,7 +56,7 @@ const AddProject = ({  onClose}) => {
                 <button className="cancelBtn" onClick={onClose}>
                     Cancel
                 </button>
-                <button type="button" className="addBtn" onClick={handleSubmit}>
+                <button type="submit" className="addBtn" >
                 { "Add"}
                 </button>
             </div>

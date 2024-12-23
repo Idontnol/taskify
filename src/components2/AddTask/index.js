@@ -94,7 +94,7 @@ const AddTask = ({ type, task, onClose, onSave, stat}) => {
           </div>
         )}
         {(type === "edit" || type === "create") && (
-          <form>
+          <form  onSubmit={handleSubmit}>
             <p className="taskc-header">{type === "create"?"Add new Task":"Edit Task"}</p>
             <hr className="custom-rule"/>
             <div className="record-format2">
@@ -105,6 +105,7 @@ const AddTask = ({ type, task, onClose, onSave, stat}) => {
                 value={taskDetails.title}
                 onChange={handleChange}
                 placeholder="Text"
+                required
               />
             </div>
             <div className="addtask-dates">
@@ -115,6 +116,7 @@ const AddTask = ({ type, task, onClose, onSave, stat}) => {
                     type="date"
                     value={taskDetails.startDate || ""}
                     onChange={handleChange}
+                    required
                 />
                 </div>
              
@@ -125,6 +127,7 @@ const AddTask = ({ type, task, onClose, onSave, stat}) => {
                         type="date"
                         value={taskDetails.endDate || ""}
                         onChange={handleChange}
+                        required
                     />
                 </div>
             </div>
@@ -145,7 +148,7 @@ const AddTask = ({ type, task, onClose, onSave, stat}) => {
                 <button className="cancelBtn" onClick={onClose}>
                     Cancel
                 </button>
-                <button type="button" className="addBtn" onClick={handleSubmit}>
+                <button  className="addBtn" type="submit">
                 {type === "edit" ? "Save Changes" : "Add"}
                 </button>
             </div>

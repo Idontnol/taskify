@@ -43,6 +43,15 @@ const Column = ({ status,setTaskOpen,setModalType,setPreferedStat, closeModal })
         return "#333"; // Default color (black/gray)
     }
   };
+  const checkActive=()=>{
+    if(activeProject==null){
+      setTaskOpen(false);
+      alert("No active project selected. Please select a project to add a task.");
+    }
+    else{
+      setTaskOpen(true);
+    }
+  }
 
   useEffect(()=>{
      setTasks(activeProject?.details[statusTemp]);
@@ -68,7 +77,7 @@ const Column = ({ status,setTaskOpen,setModalType,setPreferedStat, closeModal })
               task && <TaskComponent key={index} title={task.title} startDate={task.startDate} deadline={task.endDate} />
           )}
         <button className="add-new-taskbtn"
-        onClick={()=>{setTaskOpen(true);setModalType("create");setPreferedStat(statusTemp)}}
+        onClick={()=>{checkActive();setModalType("create");setPreferedStat(statusTemp)}}
         style={{
           backgroundColor: getStatusBackgroundColor(status),
           color: getStatusColor(status),borderRadius:"7px"

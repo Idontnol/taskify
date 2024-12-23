@@ -79,7 +79,7 @@ const TaskBoard = () => {
           ))}
         </div>
       </main>
-      {taskOpen && (
+      {taskOpen && activeProject!==null && (
         <AddTask
           type={modalType}
           task={selectedTask}
