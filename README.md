@@ -38,5 +38,3 @@ This project is a simple React.js application designed to fetch and display a li
     ```
 
 The application should now be running on `https://userexplorer09.netlify.app/`.
-
-## Project Structure
